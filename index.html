@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colour Picker</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: background-color 0.3s ease;
+    }
+    .button-group {
+      display: flex;
+      gap: 1rem;
+    }
+    button {
+      padding: 1rem 2rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      color: white;
+    }
+    .red { background-color: #e53935; }
+    .amber { background-color: #ffb300; color: black; }
+    .green { background-color: #43a047; }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+    <button class="red" onclick="changeColour('red')">Red</button>
+    <button class="amber" onclick="changeColour('amber')">Amber</button>
+    <button class="green" onclick="changeColour('green')">Green</button>
+  </div>
+
+  <script>
+    function changeColour(colour) {
+      const colours = {
+        red: '#e53935',
+        amber: '#ffb300',
+        green: '#43a047'
+      };
+      document.body.style.backgroundColor = colours[colour];
+    }
+  </script>
+</body>
+</html>
